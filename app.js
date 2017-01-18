@@ -6,7 +6,7 @@ var express = require("express"),
 var publicPath = path.resolve(__dirname, "public");
 app.use(express.static(publicPath));
 
-app.use(appRouter);
+app.use("/api", appRouter);
 
 app.use(function(req, res){
 	res.status(404).send("Page Not Found!")
